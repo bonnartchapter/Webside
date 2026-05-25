@@ -4,7 +4,7 @@
   --bg-color: #ffffff;
   --text-color: #222222;
   --border-color: #dddddd;
-  --nav-height: 100px;
+  --nav-height: 120px;
 }
 
 * {
@@ -150,7 +150,7 @@ a:hover {
 }
 
 .nav-logo img {
-  height: 80px;
+  height: 100px;
   width: auto;
   display: block;
 }

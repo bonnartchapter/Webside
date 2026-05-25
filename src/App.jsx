@@ -95,8 +95,8 @@ function AppContent({ lang, setLang }) {
         </div>
       </nav>
 
-      {/* If transparent nav is showing, pad top is 0 for full bleed hero video. Otherwise, pad 100px. */}
-      <div style={{ paddingTop: showTransparentNav ? '0' : '100px', minHeight: 'calc(100vh - 120px)' }}>
+      {/* If transparent nav is showing, pad top is 0 for full bleed hero video. Otherwise, pad 120px. */}
+      <div style={{ paddingTop: showTransparentNav ? '0' : '120px', minHeight: 'calc(100vh - 140px)' }}>
         <Routes>
           <Route path="/" element={<Home t={t} />} />
           <Route path="/about" element={<AboutLanding t={t} />} />

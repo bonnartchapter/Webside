@@ -118,25 +118,25 @@ export const locales = {
         {
           title: '干涉\nInterference',
           year: '2023',
-          videoSrc: '/干涉_display.mov',
+          videoSrc: 'https://media.githubusercontent.com/media/bonnartchapter/Webside/master/public/干涉_display.mov',
           desc: 'This is an experimental generative work of humanoid movements, exploring the concept of “interference”. The audience uses a magnetic rod to influence the surrounding magnetic field. A sensor on the window converts these changes into digital data, which then affect the movements of the virtual characters. These movements are remembered, learned, and continuously evolve through machine learning. After eight months exhibited in bna alter museum.'
         },
         {
           title: 'The Six Paths 六道 Live',
           year: '2023',
-          videoSrc: '/The Six Paths.mp4',
+          videoSrc: 'https://media.githubusercontent.com/media/bonnartchapter/Webside/master/public/The%20Six%20Paths.mp4',
           desc: 'The live interactive work "Six Paths" was completed in March 2023 and\n\nperformed on March 20, 2023, inside the Scripture Hall of Kiyomizu-\ndera Temple.\n\nThis piece featured a collaboration with Howie Lee, an electronic\nmusician from Beijing. The work consists of six segments, each\nrepresenting a different psychological states experienced in.'
         },
         {
           title: 'Nomad',
           year: '2021',
-          videoSrc: '/Nomad.mp4',
+          videoSrc: 'https://media.githubusercontent.com/media/bonnartchapter/Webside/master/public/Nomad.mp4',
           desc: 'This work was created during a time of drifting—moving from hotel to hotel, from city to city. It served as the opening piece for this year’s Nomad City tour. While performing, I found myself thinking: perhaps I was the only person on stage truly living a nomadic life.\n\nThe performance is built around a gesture-based system: the left hand controls strings, sound effects, volume, and reverb projected from the rear speakers; the right hand controls the horse—its rotation, posture, and the opening and closing of its front legs.\n\nAll percussion instruments were created using physics simulations. Different intensities and striking points produce varied sonic textures, emulating the nuances of real-world drumming through virtual interaction.'
         },
         {
           title: '禮崩樂壞\nWhen Rites Collapse and Music Spoilt AR demo',
           year: '2019',
-          videoSrc: '/When Rites Collapse and Music Spoilt AR demo.mp4',
+          videoSrc: 'https://media.githubusercontent.com/media/bonnartchapter/Webside/master/public/When%20Rites%20Collapse%20and%20Music%20Spoilt%20AR%20demo.mp4',
           desc: '「禮崩樂壞」 is an ancient Chinese idiom, which translated as 「rites\ncollapse, music spoilt.」 It depict the idea of the chaotic situation in the\nmodern society, that people no longer treasure the traditional values.\n\nThis AR work is about the accommodating between people and the fast\nchanging value system. "Adapting Reality」. Using the form of the\ntraditional Taiwanese Opera, this work is about the idea when the\ntraditional values collapse as a natural phenomenon, how can we\nhuman try to adapt this in an absurd, unbalanced and kind of chaotic\nway.\n\nThe virtual opera truck stands around 40-50cm height. When\nviewers try to watch the opera, they got to bend over while they follow\nthe moving truck.'
         }
       ]
@@ -275,25 +275,25 @@ export const locales = {
         {
           title: 'Interference',
           year: '2023',
-          videoSrc: '/干涉_display.mov',
+          videoSrc: 'https://media.githubusercontent.com/media/bonnartchapter/Webside/master/public/干涉_display.mov',
           desc: 'This is an experimental generative work of humanoid movements, exploring the concept of “interference”. The audience uses a magnetic rod to influence the surrounding magnetic field. A sensor on the window converts these changes into digital data, which then affect the movements of the virtual characters. These movements are remembered, learned, and continuously evolve through machine learning. After eight months exhibited in bna alter museum.'
         },
         {
           title: 'The Six Paths 六道 Live',
           year: '2023',
-          videoSrc: '/The Six Paths.mp4',
+          videoSrc: 'https://media.githubusercontent.com/media/bonnartchapter/Webside/master/public/The%20Six%20Paths.mp4',
           desc: 'The live interactive work "Six Paths" was completed in March 2023 and\n\nperformed on March 20, 2023, inside the Scripture Hall of Kiyomizu-\ndera Temple.\n\nThis piece featured a collaboration with Howie Lee, an electronic\nmusician from Beijing. The work consists of six segments, each\nrepresenting a different psychological states experienced in.'
         },
         {
           title: 'Nomad',
           year: '2021',
-          videoSrc: '/Nomad.mp4',
+          videoSrc: 'https://media.githubusercontent.com/media/bonnartchapter/Webside/master/public/Nomad.mp4',
           desc: 'This work was created during a time of drifting—moving from hotel to hotel, from city to city. It served as the opening piece for this year’s Nomad City tour. While performing, I found myself thinking: perhaps I was the only person on stage truly living a nomadic life.\n\nThe performance is built around a gesture-based system: the left hand controls strings, sound effects, volume, and reverb projected from the rear speakers; the right hand controls the horse—its rotation, posture, and the opening and closing of its front legs.\n\nAll percussion instruments were created using physics simulations. Different intensities and striking points produce varied sonic textures, emulating the nuances of real-world drumming through virtual interaction.'
         },
         {
           title: '禮崩樂壞\nWhen Rites Collapse and Music Spoilt AR demo',
           year: '2019',
-          videoSrc: '/When Rites Collapse and Music Spoilt AR demo.mp4',
+          videoSrc: 'https://media.githubusercontent.com/media/bonnartchapter/Webside/master/public/When%20Rites%20Collapse%20and%20Music%20Spoilt%20AR%20demo.mp4',
           desc: '「禮崩樂壞」 is an ancient Chinese idiom, which translated as 「rites\ncollapse, music spoilt.」 It depict the idea of the chaotic situation in the\nmodern society, that people no longer treasure the traditional values.\n\nThis AR work is about the accommodating between people and the fast\nchanging value system. "Adapting Reality」. Using the form of the\ntraditional Taiwanese Opera, this work is about the idea when the\ntraditional values collapse as a natural phenomenon, how can we\nhuman try to adapt this in an absurd, unbalanced and kind of chaotic\nway.\n\nThe virtual opera truck stands around 40-50cm height. When\nviewers try to watch the opera, they got to bend over while they follow\nthe moving truck.'
         }
       ]

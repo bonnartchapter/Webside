@@ -148,7 +148,7 @@ function Home({ t }) {
           loop 
           playsInline
         >
-          <source src="/首頁影片_最終.mp4" type="video/mp4" />
+          <source src="https://media.githubusercontent.com/media/bonnartchapter/Webside/master/public/首頁影片_最終.mp4" type="video/mp4" />
         </video>
         
         {/* Subtle dark gradient overlay at top so white nav text is readable on bright videos */}
@@ -177,7 +177,7 @@ function AboutLanding({ t }) {
         {/* WHAT WE DO Entry with background video */}
         <Link to="/about/what-we-do" className="about-entry" style={{ flex: 1, position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: '#fff', backgroundColor: '#333', borderBottom: '1px solid #000', overflow: 'hidden' }}>
           <video 
-            src="/what_we_do.mp4" 
+            src="https://media.githubusercontent.com/media/bonnartchapter/Webside/master/public/what_we_do.mp4" 
             autoPlay 
             muted 
             loop 
@@ -195,7 +195,7 @@ function AboutLanding({ t }) {
         {/* CHARTER Entry with background video */}
         <Link to="/about/charter" className="about-entry" style={{ flex: 1, position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: '#fff', backgroundColor: '#222', overflow: 'hidden' }}>
           <video 
-            src="/charter.mp4" 
+            src="https://media.githubusercontent.com/media/bonnartchapter/Webside/master/public/charter.mp4" 
             autoPlay 
             muted 
             loop 
@@ -232,7 +232,7 @@ function AboutWhatWeDo({ t }) {
             {/* Right side: Constrained Video Player */}
             <div>
               <video 
-                src="/what_we_do.mp4" 
+                src="https://media.githubusercontent.com/media/bonnartchapter/Webside/master/public/what_we_do.mp4" 
                 controls 
                 autoPlay 
                 muted 
@@ -282,7 +282,7 @@ function AboutCharter({ t }) {
             {/* Right side: Constrained Video Player */}
             <div>
               <video 
-                src="/charter.mp4" 
+                src="https://media.githubusercontent.com/media/bonnartchapter/Webside/master/public/charter.mp4" 
                 controls 
                 autoPlay 
                 muted 
@@ -380,7 +380,7 @@ function Chapter({ t }) {
             <div className="chapter-video-wrapper">
               <div className="chapter-video-player">
                 <video 
-                  src="/Chapter1.mp4" 
+                  src="https://media.githubusercontent.com/media/bonnartchapter/Webside/master/public/Chapter1.mp4" 
                   controls 
                   autoPlay 
                   muted 
@@ -468,7 +468,7 @@ function ArtistDetail({ t, onBack }) {
           loop 
           playsInline
         >
-          <source src="/hero.mp4.mp4" type="video/mp4" />
+          <source src="https://media.githubusercontent.com/media/bonnartchapter/Webside/master/public/hero.mp4.mp4" type="video/mp4" />
         </video>
         
         {/* Dark overlay gradient for contrast */}

@@ -247,11 +247,10 @@ function AppContent({ lang, setLang }) {
           </div>
         </div>
 
-        {/* Bottom row: policies and copyright */}
+        {/* Bottom row: contact email and copyright */}
         <div className="footer-bottom">
           <div className="footer-bottom-left">
-            <a href="#privacy" onClick={(e) => e.preventDefault()}>Privacy policy</a>
-            <a href="#accessibility" onClick={(e) => e.preventDefault()}>Accessibility policy</a>
+            <a href="mailto:bonnartchapter@gmail.com">CONTACT: bonnartchapter@gmail.com</a>
           </div>
           <div className="footer-bottom-right">
             <span>© {new Date().getFullYear()} BONN ART CHAPTER.</span>

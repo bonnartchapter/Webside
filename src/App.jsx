@@ -330,7 +330,24 @@ function AppContent({ lang, setLang }) {
 // Pages
 function Home({ t }) {
   const [isMuted, setIsMuted] = useState(true);
+  const [videoSrc, setVideoSrc] = useState('');
   const videoRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 767) {
+        // Mobile vertical video (9:16)
+        setVideoSrc('https://media.githubusercontent.com/media/bonnartchapter/Webside/master/public/%E6%89%8B%E6%A9%9F%E7%89%88%E7%B6%B2%E9%A0%81%E5%BD%B1%E7%89%87.mov');
+      } else {
+        // Desktop widescreen video (16:9)
+        setVideoSrc('https://media.githubusercontent.com/media/bonnartchapter/Webside/master/public/%E9%A6%96%E9%A0%81%E5%BD%B1%E7%89%87_%E6%9C%80%E7%B5%82.mp4');
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -342,16 +359,19 @@ function Home({ t }) {
   return (
     <PageTransition>
       <section className="hero-video-wrapper">
-        <video 
-          ref={videoRef}
-          className="hero-video" 
-          autoPlay 
-          muted={isMuted} 
-          loop 
-          playsInline
-        >
-          <source src="https://media.githubusercontent.com/media/bonnartchapter/Webside/master/public/首頁影片_最終.mp4" type="video/mp4" />
-        </video>
+        {videoSrc && (
+          <video 
+            key={videoSrc}
+            ref={videoRef}
+            className="hero-video" 
+            autoPlay 
+            muted={isMuted} 
+            loop 
+            playsInline
+          >
+            <source src={videoSrc} type={videoSrc.endsWith('.mov') ? 'video/quicktime' : 'video/mp4'} />
+          </video>
+        )}
         
         {/* Subtle dark gradient overlay at top so white nav text is readable on bright videos */}
         <div className="hero-top-gradient"></div>

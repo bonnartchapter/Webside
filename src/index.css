@@ -1395,4 +1395,373 @@ a:hover {
   }
 }
 
+/* ==========================================================================
+   MOBILE RESPONSIVE OPTIMIZATIONS (ALL SCREEN SIZES <= 767px)
+   ========================================================================== */
+
+@media (max-width: 767px) {
+  :root {
+    --nav-height: 70px;
+  }
+
+  body {
+    -webkit-text-size-adjust: 100%; /* prevent text sizing issues in mobile iOS */
+  }
+
+  h1 {
+    font-size: 2.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.65rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.6rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  /* Nav Bar Mobile Tuning */
+  .nav-bar {
+    padding: 0 1.25rem;
+    justify-content: space-between;
+  }
+
+  .nav-logo img {
+    height: 52px; /* scaled down elegantly */
+  }
+
+  .nav-center {
+    display: none; /* Hide desktop horizontal menu links */
+  }
+
+  .nav-right-container {
+    display: none; /* Hide desktop lang switcher and instagram from navbar */
+  }
+
+  /* Hamburger Toggle Icon Styles */
+  .mobile-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    z-index: 1100; /* stays above the drawer */
+    padding: 0;
+  }
+
+  .hamburger-line {
+    display: block;
+    width: 22px;
+    height: 1px; /* ultra clean ultra thin line weight matching gallery vibes */
+    background-color: var(--text-color);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease;
+    transform-origin: center;
+  }
+
+  .nav-bar.transparent .hamburger-line {
+    background-color: #ffffff;
+  }
+
+  /* Draw open button lines animation */
+  .mobile-menu-toggle.open .hamburger-line:nth-child(1) {
+    transform: translateY(3.5px) rotate(45deg);
+    background-color: var(--text-color) !important;
+  }
+
+  .mobile-menu-toggle.open .hamburger-line:nth-child(2) {
+    transform: translateY(-3.5px) rotate(-45deg);
+    background-color: var(--text-color) !important;
+  }
+
+  /* Mobile Drawer Overlay styles */
+  .mobile-menu-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-color);
+    z-index: 1050;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .mobile-menu-drawer.open {
+    transform: translateX(0);
+  }
+
+  .mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 65%;
+    width: 80%;
+    max-width: 280px;
+    margin-top: 4rem;
+  }
+
+  .mobile-menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+
+  .mobile-menu-links a {
+    font-size: 1.6rem; /* elegant small typography scale */
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-color);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 0.4rem;
+    transition: opacity 0.3s ease;
+  }
+
+  .mobile-menu-links a:hover {
+    opacity: 0.5;
+  }
+
+  .mobile-menu-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.8rem;
+  }
+
+  .mobile-lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .mobile-social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--text-color);
+  }
+
+  .mobile-social-link svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Homepage video area control buttons */
+  .sound-btn {
+    bottom: 1.5rem;
+    right: 1.25rem;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  /* Artists list grid tuning */
+  .artists-grid {
+    grid-template-columns: 1fr; /* 1 column on standard mobile sizes to maximize visual impact of artwork! */
+    gap: 3rem;
+  }
+
+  .artist-card-image-wrapper {
+    aspect-ratio: 4/5;
+  }
+
+  .artist-card-name {
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+  }
+
+  /* About Subpage Split video adjustments */
+  .about-split-layout, .chapter-split-layout {
+    gap: 2rem;
+  }
+
+  /* Interactive Works details spacing */
+  .interactive-work-item-split {
+    gap: 1.8rem;
+  }
+
+  .video-work-title-row {
+    padding-bottom: 0.6rem;
+  }
+
+  .video-work-name {
+    font-size: 1.15rem;
+    line-height: 1.3;
+  }
+
+  .video-work-year {
+    font-size: 1rem;
+  }
+
+  .video-work-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Exhibitions CV list items */
+  .cv-row {
+    grid-template-columns: 65px 1fr;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  /* Artist Detail Page Video Banner resizing */
+  .artist-detail-hero {
+    height: 52vh; /* much more compact height to stay balanced */
+  }
+
+  .artist-hero-content {
+    bottom: 1.5rem;
+    padding: 0 1.25rem;
+    gap: 1.2rem;
+  }
+
+  .artist-hero-left {
+    gap: 0.4rem;
+  }
+
+  .artist-hero-name {
+    font-size: 1.8rem;
+  }
+
+  .artist-hero-location {
+    font-size: 0.95rem;
+  }
+
+  .artist-hero-right {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  /* Convert the anchor navigation block into a gorgeous Horizontal Scroll menu on phone viewports! */
+  .artist-hero-menu {
+    flex-direction: row;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 1.5rem;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .artist-hero-menu::-webkit-scrollbar {
+    display: none; /* Safari/Chrome */
+  }
+
+  .artist-hero-menu button {
+    font-size: 0.85rem;
+    padding: 0.2rem 0;
+    flex-shrink: 0;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .artist-hero-menu button:hover {
+    color: #ffffff;
+    transform: none !important; /* disabled hover transform translation on swipe menu */
+  }
+
+  .artist-hero-line {
+    display: none; /* hide long decorative white bars inside overlay to simplify mobile layout */
+  }
+
+  .artist-detail-section {
+    scroll-margin-top: 80px; /* aligns perfectly below the 70px mobile header */
+    margin-bottom: 3.5rem;
+  }
+
+  .detail-section-title {
+    font-size: 1.25rem;
+    margin-bottom: 1.8rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .artist-bio-text {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    margin: 1.5rem 0;
+  }
+
+  /* Footer responsiveness updates */
+  .footer {
+    padding: 3.5rem 1.25rem 2.2rem 1.25rem;
+    gap: 2.2rem;
+  }
+
+  .footer-logo img {
+    height: 62px; /* responsive microscale logo */
+  }
+
+  .footer-links-cols {
+    gap: 2rem;
+  }
+
+  .footer-links-col a {
+    font-size: 0.8rem;
+  }
+
+  .footer-social-col {
+    justify-content: flex-start;
+    margin-top: 0.5rem;
+  }
+
+  .footer-middle {
+    margin-top: 0.5rem;
+  }
+
+  .email-input {
+    font-size: 0.85rem;
+  }
+
+  .email-disclaimer {
+    font-size: 0.68rem;
+  }
+
+  .footer-bottom {
+    padding-top: 1.5rem;
+    gap: 1rem;
+  }
+
+  .footer-bottom-right {
+    font-size: 0.7rem;
+  }
+}
+
+/* Intermediate size tuning (Wider phones, foldables, small tablets) */
+@media (min-width: 480px) and (max-width: 767px) {
+  .artists-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on wide devices */
+    gap: 2rem;
+  }
+}
+
 

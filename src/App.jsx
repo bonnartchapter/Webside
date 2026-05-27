@@ -41,6 +41,19 @@ function AppContent({ lang, setLang }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [email, setEmail] = useState('');
   const [subscribeStatus, setSubscribeStatus] = useState('idle'); // 'idle', 'submitting', 'success', 'error'
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
 
   const handleSubscribe = async (e) => {
     e.preventDefault();
@@ -66,9 +79,10 @@ function AppContent({ lang, setLang }) {
     }
   };
 
-  // Reset selectedArtist when route changes
+  // Reset selectedArtist and close mobile menu when route changes
   useEffect(() => {
     setSelectedArtist(null);
+    setIsMobileMenuOpen(false);
   }, [location.pathname]);
 
   // Track window scroll to switch transparent navbar to solid white
@@ -89,9 +103,9 @@ function AppContent({ lang, setLang }) {
 
   return (
     <>
-      <nav className={`nav-bar ${showTransparentNav ? 'transparent' : ''}`}>
+      <nav className={`nav-bar ${showTransparentNav ? 'transparent' : ''} ${isMobileMenuOpen ? 'drawer-open' : ''}`}>
         <div className="nav-left">
-          <Link to="/" className="nav-logo">
+          <Link to="/" className="nav-logo" onClick={() => setIsMobileMenuOpen(false)}>
             <img src="/L.png" alt="Bonn Art Chapter Logo" />
           </Link>
         </div>
@@ -134,11 +148,63 @@ function AppContent({ lang, setLang }) {
               </svg>
             </a>
           </div>
+
+          {/* Hamburger toggle button visible on mobile */}
+          <button 
+            className={`mobile-menu-toggle ${isMobileMenuOpen ? 'open' : ''}`} 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle Menu"
+          >
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+          </button>
         </div>
       </nav>
 
-      {/* If transparent nav is showing, pad top is 0 for full bleed hero video. Otherwise, pad 120px. */}
-      <div style={{ paddingTop: showTransparentNav ? '0' : '120px', minHeight: 'calc(100vh - 140px)' }}>
+      {/* Mobile Drawer Overlay Menu */}
+      <div className={`mobile-menu-drawer ${isMobileMenuOpen ? 'open' : ''}`}>
+        <div className="mobile-menu-content">
+          <div className="mobile-menu-links">
+            <Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>{t.nav.about}</Link>
+            <Link to="/chapter" onClick={() => setIsMobileMenuOpen(false)}>{t.nav.chapter}</Link>
+            <Link to="/archive" onClick={() => setIsMobileMenuOpen(false)}>{t.nav.archive}</Link>
+            <Link to="/open-call" onClick={() => setIsMobileMenuOpen(false)}>{t.nav.openCall}</Link>
+            <Link to="/press" onClick={() => setIsMobileMenuOpen(false)}>{t.nav.press}</Link>
+          </div>
+          
+          <div className="mobile-menu-footer">
+            <div className="mobile-lang-switch">
+              <button 
+                className={`lang-btn ${lang === 'EN' ? 'active' : ''}`} 
+                onClick={() => { setLang('EN'); setIsMobileMenuOpen(false); }}
+              >EN</button>
+              <span className="lang-divider">|</span>
+              <button 
+                className={`lang-btn ${lang === 'CH' ? 'active' : ''}`} 
+                onClick={() => { setLang('CH'); setIsMobileMenuOpen(false); }}
+              >CH</button>
+            </div>
+            
+            <a 
+              href="https://www.instagram.com/bonnartchapter/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="mobile-social-link"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <span>INSTAGRAM</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* If transparent nav is showing, pad top is 0 for full bleed hero video. Otherwise, pad with dynamic header height variable. */}
+      <div style={{ paddingTop: showTransparentNav ? '0' : 'var(--nav-height)', minHeight: 'calc(100vh - 140px)' }}>
         <Routes>
           <Route path="/" element={<Home t={t} />} />
           <Route path="/about" element={<AboutLanding t={t} />} />

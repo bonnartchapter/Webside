@@ -168,6 +168,29 @@ a:hover {
   padding: 0.5rem 0;
 }
 
+.nav-right-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-right: 1.2rem; /* push switcher + icon slightly leftwards for visual flow */
+}
+
+.nav-social-link {
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.nav-social-link:hover {
+  opacity: 0.5;
+}
+
+.nav-bar.transparent .nav-social-link {
+  color: #ffffff;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4));
+}
+
 .lang-switch {
   display: flex;
   align-items: center;

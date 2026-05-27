@@ -107,16 +107,32 @@ function AppContent({ lang, setLang }) {
         </div>
 
         <div className="nav-right">
-          <div className="lang-switch">
-            <button 
-              className={`lang-btn ${lang === 'EN' ? 'active' : ''}`} 
-              onClick={() => setLang('EN')}
-            >EN</button>
-            <span className="lang-divider">|</span>
-            <button 
-              className={`lang-btn ${lang === 'CH' ? 'active' : ''}`} 
-              onClick={() => setLang('CH')}
-            >CH</button>
+          <div className="nav-right-container">
+            <div className="lang-switch">
+              <button 
+                className={`lang-btn ${lang === 'EN' ? 'active' : ''}`} 
+                onClick={() => setLang('EN')}
+              >EN</button>
+              <span className="lang-divider">|</span>
+              <button 
+                className={`lang-btn ${lang === 'CH' ? 'active' : ''}`} 
+                onClick={() => setLang('CH')}
+              >CH</button>
+            </div>
+            
+            <a 
+              href="https://www.instagram.com/bonnartchapter/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="nav-social-link"
+              title="Instagram"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
           </div>
         </div>
       </nav>

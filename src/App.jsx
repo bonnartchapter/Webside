@@ -247,10 +247,10 @@ function AppContent({ lang, setLang }) {
           </div>
         </div>
 
-        {/* Bottom row: contact email and copyright */}
+        {/* Bottom row: copyright */}
         <div className="footer-bottom">
           <div className="footer-bottom-left">
-            <a href="mailto:bonnartchapter@gmail.com">CONTACT: bonnartchapter@gmail.com</a>
+            {/* Left blank for minimalist elegance */}
           </div>
           <div className="footer-bottom-right">
             <span>© {new Date().getFullYear()} BONN ART CHAPTER.</span>

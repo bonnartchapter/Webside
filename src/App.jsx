@@ -39,6 +39,32 @@ function AppContent({ lang, setLang }) {
   const isHome = location.pathname === '/';
   const [selectedArtist, setSelectedArtist] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [email, setEmail] = useState('');
+  const [subscribeStatus, setSubscribeStatus] = useState('idle'); // 'idle', 'submitting', 'success', 'error'
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    if (!email) return;
+    setSubscribeStatus('submitting');
+    try {
+      const response = await fetch('https://formspree.io/f/mojbpzdn', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({ email })
+      });
+      if (response.ok) {
+        setSubscribeStatus('success');
+        setEmail('');
+      } else {
+        setSubscribeStatus('error');
+      }
+    } catch (err) {
+      setSubscribeStatus('error');
+    }
+  };
 
   // Reset selectedArtist when route changes
   useEffect(() => {
@@ -162,21 +188,46 @@ function AppContent({ lang, setLang }) {
         {/* Email Signup Area */}
         <div className="footer-middle">
           <div className="email-signup-wrapper">
-            <div className="email-signup-input-row">
-              <input type="email" placeholder="Your email address" className="email-input" />
-              <button className="email-submit-btn" aria-label="Subscribe">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </button>
-            </div>
-            <p className="email-disclaimer">
-              {lang === 'CH' 
-                ? '訂閱以獲取 Bonn Art Chapter 的最新消息與年度徵件資訊。' 
-                : 'Subscribe to receive the latest updates and annual open call news from Bonn Art Chapter.'
-              }
-            </p>
+            {subscribeStatus === 'success' ? (
+              <div className="email-success-message" style={{ color: 'var(--text-color)', fontSize: '0.85rem', letterSpacing: '0.05em', fontWeight: '500', minHeight: '35px', display: 'flex', alignItems: 'center' }}>
+                ✓ {lang === 'CH' ? '感謝您的訂閱！' : 'THANK YOU FOR YOUR SUBSCRIPTION.'}
+              </div>
+            ) : (
+              <form onSubmit={handleSubscribe} className="email-signup-input-row">
+                <input 
+                  type="email" 
+                  placeholder={lang === 'CH' ? '您的電子信箱' : 'Your email address'} 
+                  className="email-input" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  disabled={subscribeStatus === 'submitting'}
+                  required
+                />
+                <button type="submit" className="email-submit-btn" aria-label="Subscribe" disabled={subscribeStatus === 'submitting'}>
+                  {subscribeStatus === 'submitting' ? (
+                    <span className="email-loading-spinner" />
+                  ) : (
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  )}
+                </button>
+              </form>
+            )}
+            {subscribeStatus === 'error' && (
+              <p className="email-disclaimer" style={{ color: '#ff3b30', marginTop: '0.2rem' }}>
+                {lang === 'CH' ? '訂閱失敗，請稍後再試。' : 'Subscription failed, please try again later.'}
+              </p>
+            )}
+            {subscribeStatus !== 'success' && (
+              <p className="email-disclaimer">
+                {lang === 'CH' 
+                  ? '訂閱以獲取 Bonn Art Chapter 的最新消息與年度徵件資訊。' 
+                  : 'Subscribe to receive the latest updates and annual open call news from Bonn Art Chapter.'
+                }
+              </p>
+            )}
           </div>
         </div>
 

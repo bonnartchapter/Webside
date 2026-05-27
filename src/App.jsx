@@ -137,7 +137,7 @@ function AppContent({ lang, setLang }) {
             <div className="footer-links-col">
               <Link to="/open-call">{t.nav.openCall}</Link>
               <Link to="/press">{t.nav.press}</Link>
-              <a href="mailto:bonnartchapter@gmail.com">Contact</a>
+              <a href="mailto:bonnartchapter@gmail.com">CONTACT</a>
             </div>
           </div>
 

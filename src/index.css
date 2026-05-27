@@ -1395,6 +1395,15 @@ a:hover {
   }
 }
 
+/* Global desktop hiding rules for mobile menu elements */
+.mobile-menu-drawer {
+  display: none;
+}
+
+.mobile-menu-toggle {
+  display: none;
+}
+
 /* ==========================================================================
    MOBILE RESPONSIVE OPTIMIZATIONS (ALL SCREEN SIZES <= 767px)
    ========================================================================== */

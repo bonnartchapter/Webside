@@ -119,7 +119,77 @@ function AppContent({ lang, setLang }) {
       </div>
 
       <footer className="footer">
-        © {new Date().getFullYear()} BONN ART CHAPTER.
+        <div className="footer-top">
+          {/* Left Column: Logo */}
+          <div className="footer-logo-col">
+            <Link to="/" className="footer-logo">
+              <img src="/L.png" alt="Bonn Art Chapter Logo" />
+            </Link>
+          </div>
+
+          {/* Middle Column: Grid Links */}
+          <div className="footer-links-cols">
+            <div className="footer-links-col">
+              <Link to="/about">{t.nav.about}</Link>
+              <Link to="/chapter">{t.nav.chapter}</Link>
+              <Link to="/archive">{t.nav.archive}</Link>
+            </div>
+            <div className="footer-links-col">
+              <Link to="/open-call">{t.nav.openCall}</Link>
+              <Link to="/press">{t.nav.press}</Link>
+              <a href="mailto:bonnartchapter@gmail.com">Contact</a>
+            </div>
+          </div>
+
+          {/* Right Column: Social Icons */}
+          <div className="footer-social-col">
+            <a 
+              href="https://www.instagram.com/bonnartchapter/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="social-icon-link"
+              title="Instagram"
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        {/* Email Signup Area */}
+        <div className="footer-middle">
+          <div className="email-signup-wrapper">
+            <div className="email-signup-input-row">
+              <input type="email" placeholder="Your email address" className="email-input" />
+              <button className="email-submit-btn" aria-label="Subscribe">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+            <p className="email-disclaimer">
+              {lang === 'CH' 
+                ? '訂閱以獲取 Bonn Art Chapter 的最新消息與年度徵件資訊。' 
+                : 'Subscribe to receive the latest updates and annual open call news from Bonn Art Chapter.'
+              }
+            </p>
+          </div>
+        </div>
+
+        {/* Bottom row: policies and copyright */}
+        <div className="footer-bottom">
+          <div className="footer-bottom-left">
+            <a href="#privacy" onClick={(e) => e.preventDefault()}>Privacy policy</a>
+            <a href="#accessibility" onClick={(e) => e.preventDefault()}>Accessibility policy</a>
+          </div>
+          <div className="footer-bottom-right">
+            <span>© {new Date().getFullYear()} BONN ART CHAPTER.</span>
+          </div>
+        </div>
       </footer>
     </>
   );

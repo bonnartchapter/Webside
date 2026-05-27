@@ -386,14 +386,183 @@ a:hover {
   }
 }
 
+/* Footer Redesign - High-end Gallery Aesthetic */
 .footer {
-  background: var(--bg-color);
-  color: #999;
-  padding: 4rem 5%;
-  font-weight: 400;
-  font-size: 0.85rem;
-  text-align: center;
+  background-color: var(--bg-color);
   border-top: 1px solid var(--border-color);
+  padding: 6rem 5% 3rem 5%;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .footer-top {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.footer-logo-col {
+  flex: 1;
+}
+
+.footer-logo img {
+  height: 50px; /* Elegant subtle footprint in footer */
+  width: auto;
+  display: block;
+}
+
+.footer-links-cols {
+  flex: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.footer-links-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footer-links-col a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  transition: opacity 0.3s ease;
+}
+
+.footer-links-col a:hover {
+  opacity: 0.6;
+}
+
+.footer-social-col {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .footer-social-col {
+    justify-content: flex-end;
+  }
+}
+
+.social-icon-link {
+  color: var(--text-color);
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.social-icon-link:hover {
+  opacity: 0.6;
+}
+
+/* Email Signup Section */
+.footer-middle {
+  max-width: 450px;
+  width: 100%;
+}
+
+.email-signup-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.email-signup-input-row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1.2px solid var(--text-color);
+  padding-bottom: 0.5rem;
+  position: relative;
+}
+
+.email-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  padding: 0;
+}
+
+.email-input::placeholder {
+  color: #999;
+}
+
+.email-submit-btn {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.email-submit-btn:hover {
+  transform: translateX(4px);
+}
+
+.email-disclaimer {
+  font-size: 0.75rem;
+  color: #888;
+  line-height: 1.4;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 2rem;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+@media (min-width: 768px) {
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.footer-bottom-left {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-bottom-left a {
+  color: #777;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom-left a:hover {
+  color: var(--text-color);
+}
+
+.footer-bottom-right {
+  font-family: monospace;
 }
 
 /* About Landing Page */
